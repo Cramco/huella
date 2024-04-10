@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const HuellaSchema = new mongoose.Schema(
     {
         fechaHora: String,
+        userid:Number,
         huellaId: Number,
         nombre:String,
         apellido: String,
         telefono: Number,
         puesto: String,
         foto: String,
+        estado: Number,
     }, 
 );
 mongoose.model("huellas",HuellaSchema);
@@ -37,7 +39,8 @@ mongoose.model("humedad", Humedad);
 //tabla de calidad de aire
 
 const Aire = new mongoose.Schema({
-        CO2: Number,    
+        CO2: Number,
+        estado: Number,
     }, { timestamps: true }
 );
 mongoose.model("aire",Aire);

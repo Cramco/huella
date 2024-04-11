@@ -24,6 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cors({
+  origin: "*",
+  methods: "GET,PUT,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/esp32",espRouter)

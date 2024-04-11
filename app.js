@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://cramco:2340@cluster0.r57phxy.mongodb.net/ControlAcceso?retryWrites=true&w=majority")
+const cors = require("cors");
 
 require("./models/esp32")
 var indexRouter = require('./routes/index');
